@@ -1,3 +1,5 @@
-const App = () => <h1>Splash Page</h1>
+import SplashScreen from './components/SplashScreen';
+
+const App = () => <SplashScreen />
 
 export default App;

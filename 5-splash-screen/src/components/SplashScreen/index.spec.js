@@ -4,10 +4,13 @@ import { mockSplash } from '../../data/splash';
 
 describe('<SplashScreen />', () => {
   it('deve renderizar texto padrão se não receber propriedades', () => {
-    render(<SplashScreen />);
+    const { container } = render(<SplashScreen />);
 
     expect(screen.getByRole('heading', { name: /site em construção/i })).toBeInTheDocument();
     expect(screen.getByText(/novidades em breve/i)).toBeInTheDocument();
+
+    expect(container.firstChild).not.toHaveStyle(`background-image: url(${mockSplash.image})`);
+    expect(screen.queryByRole('list')).not.toBeInTheDocument();
   })
 
   it('deve renderizar corretamente as propriedades recebidas', () => {

@@ -12,6 +12,13 @@ const createUser = (request) => {
       body: new Error('Parametro ausente: email')
     }
   }
+
+  if (!request.body.password) {
+    return {
+      status: 400,
+      body: new Error('Parametro ausente: password')
+    }
+  }
 };
 
 module.exports = { createUser };

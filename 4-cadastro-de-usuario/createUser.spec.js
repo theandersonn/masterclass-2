@@ -33,7 +33,7 @@ describe('SignUp Controller', () => {
     expect(response.body).toEqual(new Error('Parametro ausente: email'));
   });
 
-  it('Deve retornar 400 se o password não for declarado', () => {
+  it('Deve retornar 400 se a senha não for declarada', () => {
     const request = {
       body: {
         name: 'John Doe',

@@ -8,6 +8,13 @@ const createUser = (request) => {
       }
     }
   }
+
+  if (request.body.password !== request.body.passwordConfirmation) {
+    return {
+      status: 400,
+      body: new Error('A senha e a confirmação não conferem')
+    }
+  }
 };
 
 module.exports = { createUser };

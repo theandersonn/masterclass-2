@@ -10,13 +10,13 @@ const SplashScreen = ({image, title, description, urls = []}) => {
         <p className='description'>{description || 'novidades em breve'}</p>
 
         {urls.length ? (
-          <url className='urls'>
+          <ul className='urls'>
             {urls.map((item, id) => (
-              <li>
-                <a href={item.url}>{item.title}</a>
+              <li key={id}>
+                <a href={item.url} target='_blank' rel='noreferrer'>{item.title}</a>
               </li>
             ))}
-          </url>
+          </ul>
         ) : ''}
       </article>
     </section>

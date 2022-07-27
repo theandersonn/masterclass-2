@@ -15,6 +15,11 @@ const createUser = (request) => {
       body: new Error('A senha e a confirmação não conferem')
     }
   }
+
+  return {
+    status: 200,
+    body: request.body
+  }
 };
 
 module.exports = { createUser };

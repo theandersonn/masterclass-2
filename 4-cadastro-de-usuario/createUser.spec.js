@@ -81,4 +81,20 @@ describe('SignUp Controller', () => {
     expect(response.body.password).toEqual(response.body.passwordConfirmation);
     expect(response.body).toEqual(new Error('A senha e a confirmação não conferem'));
   });
+
+  it('Deve retornar 200 se todos os valores forem válidos', () => {
+    const request = {
+      body: {
+        name: 'John Doe',
+        email: 'johndoe@mail.com',
+        password: '123',
+        passwordConfirmation: '123'
+      }
+    };
+  
+    const response = createUser(request);
+  
+    expect(response.status).toBe(200);
+    expect(response.body).toEqual(response.body);
+  });
 });

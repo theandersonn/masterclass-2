@@ -27,7 +27,7 @@ SplashScreen.propTypes = {
   image: PropTypes.string,
   title: PropTypes.string,
   description: PropTypes.string,
-  urls: PropTypes.string,
+  urls: PropTypes.array,
 }
 
 export default SplashScreen;
